@@ -17,3 +17,13 @@
 25-07-31.15:29:59.436 [main            ] INFO  GroupBuyDiscountDaoTest - 测试结果:[{"createTime":1733538015000,"discountDesc":"测试优惠","discountId":25120207,"discountName":"测试优惠","discountType":0,"id":1,"marketExpr":"20","marketPlan":"ZJ","updateTime":1733538015000}]
 25-07-31.15:29:59.444 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
 25-07-31.15:29:59.447 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-07-31.22:26:02.509 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Starting IIndexGroupBuyMarketServiceTest using Java 1.8.0_442 on JUN with PID 20468 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
+25-07-31.22:26:02.510 [main            ] INFO  IIndexGroupBuyMarketServiceTest - The following 1 profile is active: "dev"
+25-07-31.22:26:05.252 [main            ] INFO  IIndexGroupBuyMarketServiceTest - Started IIndexGroupBuyMarketServiceTest in 3.082 seconds (JVM running for 4.073)
+25-07-31.22:26:05.584 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-07-31.22:26:05.612 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-07-31.22:26:06.440 [pool-2-thread-1 ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-07-31.22:26:06.481 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 请求参数:{"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-07-31.22:26:06.488 [main            ] INFO  IIndexGroupBuyMarketServiceTest - 返回结果:{"deductionPrice":0.00,"endTime":1733537980000,"goodsId":"9890001","goodsName":"《手写MyBatis：渐进式源码实践》","isEnable":false,"isVisible":false,"originalPrice":100.00,"startTime":1733537980000,"targetCount":1}
+25-07-31.22:26:06.498 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-07-31.22:26:06.502 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
