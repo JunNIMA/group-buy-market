@@ -1,0 +1,19 @@
+25-07-31.15:27:26.092 [main            ] INFO  GroupBuyActivityDaoTest - Starting GroupBuyActivityDaoTest using Java 1.8.0_442 on JUN with PID 19644 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
+25-07-31.15:27:26.093 [main            ] INFO  GroupBuyActivityDaoTest - The following 1 profile is active: "dev"
+25-07-31.15:27:28.387 [main            ] INFO  GroupBuyActivityDaoTest - Started GroupBuyActivityDaoTest in 2.721 seconds (JVM running for 3.859)
+25-07-31.15:29:14.168 [main            ] INFO  GroupBuyActivityDaoTest - Starting GroupBuyActivityDaoTest using Java 1.8.0_442 on JUN with PID 14480 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
+25-07-31.15:29:14.169 [main            ] INFO  GroupBuyActivityDaoTest - The following 1 profile is active: "dev"
+25-07-31.15:29:15.834 [main            ] INFO  GroupBuyActivityDaoTest - Started GroupBuyActivityDaoTest in 1.969 seconds (JVM running for 2.559)
+25-07-31.15:29:16.005 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-07-31.15:29:16.871 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-07-31.15:29:17.070 [main            ] INFO  GroupBuyActivityDaoTest - 测试结果:[{"activityId":100123,"activityName":"测试活动","channel":"c01","createTime":1733537980000,"discountId":"25120207","endTime":1733537980000,"goodsId":"9890001","groupType":0,"id":1,"source":"s01","startTime":1733537980000,"status":0,"tagId":"1","tagScope":"1","takeLimitCount":1,"target":1,"updateTime":1733543247000,"validTime":15}]
+25-07-31.15:29:17.079 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-07-31.15:29:17.084 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-07-31.15:29:56.651 [main            ] INFO  GroupBuyDiscountDaoTest - Starting GroupBuyDiscountDaoTest using Java 1.8.0_442 on JUN with PID 7400 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
+25-07-31.15:29:56.652 [main            ] INFO  GroupBuyDiscountDaoTest - The following 1 profile is active: "dev"
+25-07-31.15:29:58.425 [main            ] INFO  GroupBuyDiscountDaoTest - Started GroupBuyDiscountDaoTest in 2.192 seconds (JVM running for 2.88)
+25-07-31.15:29:58.581 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-07-31.15:29:59.262 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-07-31.15:29:59.436 [main            ] INFO  GroupBuyDiscountDaoTest - 测试结果:[{"createTime":1733538015000,"discountDesc":"测试优惠","discountId":25120207,"discountName":"测试优惠","discountType":0,"id":1,"marketExpr":"20","marketPlan":"ZJ","updateTime":1733538015000}]
+25-07-31.15:29:59.444 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-07-31.15:29:59.447 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
