@@ -24,7 +24,7 @@ public abstract class AbstractGroupBuyMarketSupport<MarketProductEntity, Dynamic
     protected IActivityRepository repository;
 
     @Override
-    protected void mutiThread(cn.bugstack.domain.activity.model.entity.MarketProductEntity requestParameter, DefaultActivityStrategyFactory.DynamicContext dynamicContext) throws ExecutionException, InterruptedException, TimeoutException {
+    protected void multiThread(cn.bugstack.domain.activity.model.entity.MarketProductEntity requestParameter, DefaultActivityStrategyFactory.DynamicContext dynamicContext) throws ExecutionException, InterruptedException, TimeoutException {
 
     }
 }
