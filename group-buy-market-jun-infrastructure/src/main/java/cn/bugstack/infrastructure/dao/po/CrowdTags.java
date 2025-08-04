@@ -33,5 +33,4 @@ public class CrowdTags {
     /** 更新时间 */
     private Date updateTime;
 
-
 }

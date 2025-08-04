@@ -48,7 +48,7 @@ public class ActivityRepository implements IActivityRepository {
     @Override
     public GroupBuyActivityDiscountVO queryGroupBuyActivityDiscountVO(Long activityId) {
         // 根据SC渠道值查询配置中最新的1个有效的活动
-        GroupBuyActivity groupBuyActivityRes = groupBuyActivityDao.queryValidGroupBuyActivityID(activityId);
+        GroupBuyActivity groupBuyActivityRes = groupBuyActivityDao.queryValidGroupBuyActivityId(activityId);
         if(null == groupBuyActivityRes) return null;
 
         String discountId = groupBuyActivityRes.getDiscountId();

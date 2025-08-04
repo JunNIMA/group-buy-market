@@ -31,7 +31,7 @@ public class DCCController implements IDCCService {
      */
     @RequestMapping(value = "update_config", method = RequestMethod.GET)
     @Override
-    public Response<Boolean> updateConfig(@RequestParam String key, @RequestParam String value) {
+    public Response<Boolean>  updateConfig(@RequestParam String key, @RequestParam String value) {
         try {
             log.info("DCC 动态配置值变更 key:{} value:{}", key, value);
             dccTopic.publish(key + "," + value);

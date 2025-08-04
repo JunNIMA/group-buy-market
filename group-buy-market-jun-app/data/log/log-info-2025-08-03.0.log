@@ -1,0 +1,505 @@
+25-08-03.10:31:54.288 [main            ] INFO  MarketTradeControllerTest - Starting MarketTradeControllerTest using Java 1.8.0_442 on JUN with PID 62920 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
+25-08-03.10:31:54.289 [main            ] INFO  MarketTradeControllerTest - The following 1 profile is active: "dev"
+25-08-03.10:31:55.695 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-03.10:31:55.698 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-03.10:31:55.725 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+25-08-03.10:31:55.979 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [cn.bugstack.config.RedisClientConfig$$EnhancerBySpringCGLIB$$ad05e511] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:31:56.260 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-cn.bugstack.config.RedisClientConfigProperties' of type [cn.bugstack.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:31:56.869 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-03.10:31:57.453 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-03.10:31:57.465 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-03.10:31:57.497 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:32:00.111 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-03.10:32:00.171 [main            ] INFO  MarketTradeControllerTest - Started MarketTradeControllerTest in 6.263 seconds (JVM running for 7.206)
+25-08-03.10:32:56.685 [main            ] INFO  MarketTradeController  - 营销交易锁单:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"740593133499","source":"s01","userId":"xiaofuge"}
+25-08-03.10:33:03.946 [main            ] INFO  TradeOrderService      - 拼团交易-查询未支付营销订单:xiaofuge outTradeNo:740593133499
+25-08-03.10:33:04.027 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-03.10:33:04.881 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-03.10:34:11.460 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-08-03.10:34:11.461 [main            ] INFO  SwitchNode             - 拼团商品查询试算服务-SwitchNode userId:xiaofuge requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-08-03.10:34:11.495 [main            ] INFO  SwitchNode             - 拼团活动降级拦截 xiaofuge
+25-08-03.10:34:29.805 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m14s551ms66µs700ns).
+25-08-03.10:34:29.809 [main            ] ERROR MarketTradeController  - 营销交易锁单业务异常:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"740593133499","source":"s01","userId":"xiaofuge"}
+cn.bugstack.types.exception.AppException: null
+	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:38)
+	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:21)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.apply(AbstractMultiThreadStrategyRouter.java:29)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.router(AbstractMultiThreadStrategyRouter.java:22)
+	at cn.bugstack.domain.activity.service.trial.node.RootNode.doApply(RootNode.java:37)
+	at cn.bugstack.domain.activity.service.trial.node.RootNode.doApply(RootNode.java:22)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.apply(AbstractMultiThreadStrategyRouter.java:29)
+	at cn.bugstack.domain.activity.service.IndexGroupBuyMarketServiceImpl.indexMarketTrial(IndexGroupBuyMarketServiceImpl.java:27)
+	at cn.bugstack.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:97)
+	at cn.bugstack.test.trigger.MarketTradeControllerTest.test_lockMarketPayOrder(MarketTradeControllerTest.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+25-08-03.10:34:29.817 [main            ] INFO  MarketTradeControllerTest - 测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"740593133499","source":"s01","userId":"xiaofuge"} res:{"code":"E0003","info":"拼团活动降级拦截"}
+25-08-03.10:34:29.842 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-03.10:34:29.850 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-03.10:35:00.951 [main            ] INFO  MarketTradeControllerTest - Starting MarketTradeControllerTest using Java 1.8.0_442 on JUN with PID 59384 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
+25-08-03.10:35:00.952 [main            ] INFO  MarketTradeControllerTest - The following 1 profile is active: "dev"
+25-08-03.10:35:01.729 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-03.10:35:01.732 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-03.10:35:01.765 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+25-08-03.10:35:02.033 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [cn.bugstack.config.RedisClientConfig$$EnhancerBySpringCGLIB$$638d5e71] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:35:02.304 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-cn.bugstack.config.RedisClientConfigProperties' of type [cn.bugstack.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:35:02.902 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-03.10:35:03.506 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-03.10:35:03.518 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-03.10:35:03.551 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:35:06.100 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-03.10:35:06.161 [main            ] INFO  MarketTradeControllerTest - Started MarketTradeControllerTest in 5.558 seconds (JVM running for 6.359)
+25-08-03.10:35:10.224 [main            ] INFO  MarketTradeController  - 营销交易锁单:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"202760145889","source":"s01","userId":"xiaofuge"}
+25-08-03.10:35:10.224 [main            ] INFO  TradeOrderService      - 拼团交易-查询未支付营销订单:xiaofuge outTradeNo:202760145889
+25-08-03.10:35:10.246 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-03.10:35:10.513 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-03.10:35:10.551 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-08-03.10:35:36.876 [main            ] INFO  SwitchNode             - 拼团商品查询试算服务-SwitchNode userId:xiaofuge requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-08-03.10:36:27.102 [main            ] INFO  SwitchNode             - 拼团活动降级拦截 xiaofuge
+25-08-03.10:36:27.102 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m13s970ms478µs500ns).
+25-08-03.10:36:27.110 [main            ] ERROR MarketTradeController  - 营销交易锁单业务异常:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"202760145889","source":"s01","userId":"xiaofuge"}
+cn.bugstack.types.exception.AppException: null
+	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:38)
+	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:21)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.apply(AbstractMultiThreadStrategyRouter.java:29)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.router(AbstractMultiThreadStrategyRouter.java:22)
+	at cn.bugstack.domain.activity.service.trial.node.RootNode.doApply(RootNode.java:37)
+	at cn.bugstack.domain.activity.service.trial.node.RootNode.doApply(RootNode.java:22)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.apply(AbstractMultiThreadStrategyRouter.java:29)
+	at cn.bugstack.domain.activity.service.IndexGroupBuyMarketServiceImpl.indexMarketTrial(IndexGroupBuyMarketServiceImpl.java:27)
+	at cn.bugstack.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:97)
+	at cn.bugstack.test.trigger.MarketTradeControllerTest.test_lockMarketPayOrder(MarketTradeControllerTest.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+25-08-03.10:36:27.113 [main            ] INFO  MarketTradeControllerTest - 测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"202760145889","source":"s01","userId":"xiaofuge"} res:{"code":"E0003","info":"拼团活动降级拦截"}
+25-08-03.10:36:27.133 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-03.10:36:27.141 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-03.10:36:41.593 [main            ] INFO  MarketTradeControllerTest - Starting MarketTradeControllerTest using Java 1.8.0_442 on JUN with PID 55740 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
+25-08-03.10:36:41.594 [main            ] INFO  MarketTradeControllerTest - The following 1 profile is active: "dev"
+25-08-03.10:36:42.445 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-03.10:36:42.448 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-03.10:36:42.475 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+25-08-03.10:36:42.719 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [cn.bugstack.config.RedisClientConfig$$EnhancerBySpringCGLIB$$7804cd7a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:36:43.025 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-cn.bugstack.config.RedisClientConfigProperties' of type [cn.bugstack.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:36:43.672 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-03.10:36:44.278 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-03.10:36:44.288 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-03.10:36:44.327 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:36:46.506 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-03.10:36:46.711 [main            ] INFO  MarketTradeControllerTest - Started MarketTradeControllerTest in 5.445 seconds (JVM running for 6.102)
+25-08-03.10:36:47.081 [main            ] INFO  MarketTradeController  - 营销交易锁单:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"295317988584","source":"s01","userId":"xiaofuge"}
+25-08-03.10:36:47.081 [main            ] INFO  TradeOrderService      - 拼团交易-查询未支付营销订单:xiaofuge outTradeNo:295317988584
+25-08-03.10:36:47.101 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-03.10:36:47.323 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-03.10:36:47.357 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-08-03.10:36:47.357 [main            ] INFO  SwitchNode             - 拼团商品查询试算服务-SwitchNode userId:xiaofuge requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-08-03.10:36:47.361 [main            ] INFO  SwitchNode             - 拼团活动切量拦截 xiaofuge
+25-08-03.10:36:47.364 [main            ] ERROR MarketTradeController  - 营销交易锁单业务异常:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"295317988584","source":"s01","userId":"xiaofuge"}
+cn.bugstack.types.exception.AppException: null
+	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:44)
+	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:21)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.apply(AbstractMultiThreadStrategyRouter.java:29)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.router(AbstractMultiThreadStrategyRouter.java:22)
+	at cn.bugstack.domain.activity.service.trial.node.RootNode.doApply(RootNode.java:37)
+	at cn.bugstack.domain.activity.service.trial.node.RootNode.doApply(RootNode.java:22)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.apply(AbstractMultiThreadStrategyRouter.java:29)
+	at cn.bugstack.domain.activity.service.IndexGroupBuyMarketServiceImpl.indexMarketTrial(IndexGroupBuyMarketServiceImpl.java:27)
+	at cn.bugstack.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:97)
+	at cn.bugstack.test.trigger.MarketTradeControllerTest.test_lockMarketPayOrder(MarketTradeControllerTest.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+25-08-03.10:36:47.366 [main            ] INFO  MarketTradeControllerTest - 测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"295317988584","source":"s01","userId":"xiaofuge"} res:{"code":"E0004","info":"拼团活动切量拦截"}
+25-08-03.10:36:47.380 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-03.10:36:47.384 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-03.10:38:10.670 [main            ] INFO  MarketTradeControllerTest - Starting MarketTradeControllerTest using Java 1.8.0_442 on JUN with PID 62808 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
+25-08-03.10:38:10.671 [main            ] INFO  MarketTradeControllerTest - The following 1 profile is active: "dev"
+25-08-03.10:38:11.474 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-03.10:38:11.476 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-03.10:38:11.504 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+25-08-03.10:38:11.758 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [cn.bugstack.config.RedisClientConfig$$EnhancerBySpringCGLIB$$42a51c8f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:38:12.022 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-cn.bugstack.config.RedisClientConfigProperties' of type [cn.bugstack.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:38:12.683 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-03.10:38:13.344 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-03.10:38:13.353 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-03.10:38:13.387 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:38:15.647 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-03.10:38:15.862 [main            ] INFO  MarketTradeControllerTest - Started MarketTradeControllerTest in 5.528 seconds (JVM running for 6.155)
+25-08-03.10:38:16.239 [main            ] INFO  MarketTradeController  - 营销交易锁单:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"022567953947","source":"s01","userId":"xiaofuge"}
+25-08-03.10:38:16.239 [main            ] INFO  TradeOrderService      - 拼团交易-查询未支付营销订单:xiaofuge outTradeNo:022567953947
+25-08-03.10:38:16.259 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-03.10:38:16.483 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-03.10:38:16.518 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-08-03.10:38:16.518 [main            ] INFO  SwitchNode             - 拼团商品查询试算服务-SwitchNode userId:xiaofuge requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-08-03.10:38:16.521 [main            ] INFO  SwitchNode             - 拼团活动切量拦截 xiaofuge
+25-08-03.10:38:16.523 [main            ] ERROR MarketTradeController  - 营销交易锁单业务异常:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"022567953947","source":"s01","userId":"xiaofuge"}
+cn.bugstack.types.exception.AppException: null
+	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:44)
+	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:21)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.apply(AbstractMultiThreadStrategyRouter.java:29)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.router(AbstractMultiThreadStrategyRouter.java:22)
+	at cn.bugstack.domain.activity.service.trial.node.RootNode.doApply(RootNode.java:37)
+	at cn.bugstack.domain.activity.service.trial.node.RootNode.doApply(RootNode.java:22)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.apply(AbstractMultiThreadStrategyRouter.java:29)
+	at cn.bugstack.domain.activity.service.IndexGroupBuyMarketServiceImpl.indexMarketTrial(IndexGroupBuyMarketServiceImpl.java:27)
+	at cn.bugstack.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:97)
+	at cn.bugstack.test.trigger.MarketTradeControllerTest.test_lockMarketPayOrder(MarketTradeControllerTest.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+25-08-03.10:38:16.527 [main            ] INFO  MarketTradeControllerTest - 测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"022567953947","source":"s01","userId":"xiaofuge"} res:{"code":"E0004","info":"拼团活动切量拦截"}
+25-08-03.10:38:16.538 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-03.10:38:16.542 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-03.10:41:42.146 [main            ] INFO  MarketTradeControllerTest - Starting MarketTradeControllerTest using Java 1.8.0_442 on JUN with PID 29684 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
+25-08-03.10:41:42.147 [main            ] INFO  MarketTradeControllerTest - The following 1 profile is active: "dev"
+25-08-03.10:41:42.958 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-03.10:41:42.961 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-03.10:41:42.993 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+25-08-03.10:41:43.259 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [cn.bugstack.config.RedisClientConfig$$EnhancerBySpringCGLIB$$77785740] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:41:43.613 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-cn.bugstack.config.RedisClientConfigProperties' of type [cn.bugstack.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:41:44.294 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-03.10:41:44.942 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-03.10:41:44.951 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-03.10:41:44.992 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:41:47.761 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-03.10:41:47.816 [main            ] INFO  MarketTradeControllerTest - Started MarketTradeControllerTest in 6.042 seconds (JVM running for 6.896)
+25-08-03.10:41:48.252 [main            ] INFO  MarketTradeController  - 营销交易锁单:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"017182356219","source":"s01","userId":"xiaofuge"}
+25-08-03.10:41:48.252 [main            ] INFO  TradeOrderService      - 拼团交易-查询未支付营销订单:xiaofuge outTradeNo:017182356219
+25-08-03.10:41:48.278 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-03.10:41:48.557 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-03.10:41:48.597 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-08-03.10:41:48.597 [main            ] INFO  SwitchNode             - 拼团商品查询试算服务-SwitchNode userId:xiaofuge requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-08-03.10:41:48.602 [main            ] INFO  SwitchNode             - 拼团活动切量拦截 xiaofuge
+25-08-03.10:41:48.605 [main            ] ERROR MarketTradeController  - 营销交易锁单业务异常:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"017182356219","source":"s01","userId":"xiaofuge"}
+cn.bugstack.types.exception.AppException: null
+	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:44)
+	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:21)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.apply(AbstractMultiThreadStrategyRouter.java:29)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.router(AbstractMultiThreadStrategyRouter.java:22)
+	at cn.bugstack.domain.activity.service.trial.node.RootNode.doApply(RootNode.java:37)
+	at cn.bugstack.domain.activity.service.trial.node.RootNode.doApply(RootNode.java:22)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.apply(AbstractMultiThreadStrategyRouter.java:29)
+	at cn.bugstack.domain.activity.service.IndexGroupBuyMarketServiceImpl.indexMarketTrial(IndexGroupBuyMarketServiceImpl.java:27)
+	at cn.bugstack.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:97)
+	at cn.bugstack.test.trigger.MarketTradeControllerTest.test_lockMarketPayOrder(MarketTradeControllerTest.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+25-08-03.10:41:48.608 [main            ] INFO  MarketTradeControllerTest - 测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"017182356219","source":"s01","userId":"xiaofuge"} res:{"code":"E0004","info":"拼团活动切量拦截"}
+25-08-03.10:41:48.624 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-03.10:41:48.628 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-03.10:42:04.372 [main            ] INFO  MarketTradeControllerTest - Starting MarketTradeControllerTest using Java 1.8.0_442 on JUN with PID 36028 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
+25-08-03.10:42:04.373 [main            ] INFO  MarketTradeControllerTest - The following 1 profile is active: "dev"
+25-08-03.10:42:05.182 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-03.10:42:05.185 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-03.10:42:05.221 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+25-08-03.10:42:05.479 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [cn.bugstack.config.RedisClientConfig$$EnhancerBySpringCGLIB$$ad05e511] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:42:05.770 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-cn.bugstack.config.RedisClientConfigProperties' of type [cn.bugstack.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:42:06.409 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-03.10:42:07.096 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-03.10:42:07.107 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-03.10:42:07.145 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:42:10.094 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-03.10:42:10.154 [main            ] INFO  MarketTradeControllerTest - Started MarketTradeControllerTest in 6.21 seconds (JVM running for 7.135)
+25-08-03.10:42:10.511 [main            ] INFO  MarketTradeController  - 营销交易锁单:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"225956864885","source":"s01","userId":"xiaofuge"}
+25-08-03.10:42:10.511 [main            ] INFO  TradeOrderService      - 拼团交易-查询未支付营销订单:xiaofuge outTradeNo:225956864885
+25-08-03.10:42:10.535 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-03.10:42:10.806 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-03.10:42:10.845 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-08-03.10:42:10.846 [main            ] INFO  SwitchNode             - 拼团商品查询试算服务-SwitchNode userId:xiaofuge requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-08-03.10:42:46.551 [main            ] INFO  SwitchNode             - 拼团活动切量拦截 xiaofuge
+25-08-03.10:42:46.556 [main            ] ERROR MarketTradeController  - 营销交易锁单业务异常:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"225956864885","source":"s01","userId":"xiaofuge"}
+cn.bugstack.types.exception.AppException: null
+	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:44)
+	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:21)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.apply(AbstractMultiThreadStrategyRouter.java:29)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.router(AbstractMultiThreadStrategyRouter.java:22)
+	at cn.bugstack.domain.activity.service.trial.node.RootNode.doApply(RootNode.java:37)
+	at cn.bugstack.domain.activity.service.trial.node.RootNode.doApply(RootNode.java:22)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.apply(AbstractMultiThreadStrategyRouter.java:29)
+	at cn.bugstack.domain.activity.service.IndexGroupBuyMarketServiceImpl.indexMarketTrial(IndexGroupBuyMarketServiceImpl.java:27)
+	at cn.bugstack.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:97)
+	at cn.bugstack.test.trigger.MarketTradeControllerTest.test_lockMarketPayOrder(MarketTradeControllerTest.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+25-08-03.10:42:46.560 [main            ] INFO  MarketTradeControllerTest - 测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"225956864885","source":"s01","userId":"xiaofuge"} res:{"code":"E0004","info":"拼团活动切量拦截"}
+25-08-03.10:42:46.577 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-03.10:42:46.589 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-03.10:45:36.962 [main            ] INFO  MarketTradeControllerTest - Starting MarketTradeControllerTest using Java 1.8.0_442 on JUN with PID 42436 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
+25-08-03.10:45:36.963 [main            ] INFO  MarketTradeControllerTest - The following 1 profile is active: "dev"
+25-08-03.10:45:37.766 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-03.10:45:37.768 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-03.10:45:37.811 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+25-08-03.10:45:38.067 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [cn.bugstack.config.RedisClientConfig$$EnhancerBySpringCGLIB$$b892333e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:45:38.348 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-cn.bugstack.config.RedisClientConfigProperties' of type [cn.bugstack.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:45:38.987 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-03.10:45:39.604 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-03.10:45:39.614 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-03.10:45:39.658 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:45:42.292 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-03.10:45:42.359 [main            ] INFO  MarketTradeControllerTest - Started MarketTradeControllerTest in 5.795 seconds (JVM running for 6.652)
+25-08-03.10:45:42.740 [main            ] INFO  MarketTradeController  - 营销交易锁单:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"933317255330","source":"s01","userId":"xiaofuge"}
+25-08-03.10:45:42.740 [main            ] INFO  TradeOrderService      - 拼团交易-查询未支付营销订单:xiaofuge outTradeNo:933317255330
+25-08-03.10:45:42.765 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-03.10:45:43.026 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-03.10:45:43.064 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-08-03.10:45:43.064 [main            ] INFO  SwitchNode             - 拼团商品查询试算服务-SwitchNode userId:xiaofuge requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-08-03.10:49:51.369 [main            ] INFO  SwitchNode             - 拼团活动切量拦截 xiaofuge
+25-08-03.10:49:51.376 [main            ] ERROR MarketTradeController  - 营销交易锁单业务异常:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"933317255330","source":"s01","userId":"xiaofuge"}
+cn.bugstack.types.exception.AppException: null
+	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:44)
+	at cn.bugstack.domain.activity.service.trial.node.SwitchNode.doApply(SwitchNode.java:21)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.apply(AbstractMultiThreadStrategyRouter.java:29)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.router(AbstractMultiThreadStrategyRouter.java:22)
+	at cn.bugstack.domain.activity.service.trial.node.RootNode.doApply(RootNode.java:37)
+	at cn.bugstack.domain.activity.service.trial.node.RootNode.doApply(RootNode.java:22)
+	at cn.bugstack.types.design.framework.tree.AbstractMultiThreadStrategyRouter.apply(AbstractMultiThreadStrategyRouter.java:29)
+	at cn.bugstack.domain.activity.service.IndexGroupBuyMarketServiceImpl.indexMarketTrial(IndexGroupBuyMarketServiceImpl.java:27)
+	at cn.bugstack.trigger.http.MarketTradeController.lockMarketPayOrder(MarketTradeController.java:97)
+	at cn.bugstack.test.trigger.MarketTradeControllerTest.test_lockMarketPayOrder(MarketTradeControllerTest.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+25-08-03.10:49:51.380 [main            ] INFO  MarketTradeControllerTest - 测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"933317255330","source":"s01","userId":"xiaofuge"} res:{"code":"E0004","info":"拼团活动切量拦截"}
+25-08-03.10:49:51.398 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-03.10:49:51.410 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-03.10:51:29.961 [main            ] INFO  MarketTradeControllerTest - Starting MarketTradeControllerTest using Java 1.8.0_442 on JUN with PID 45584 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
+25-08-03.10:51:29.961 [main            ] INFO  MarketTradeControllerTest - The following 1 profile is active: "dev"
+25-08-03.10:51:30.645 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-03.10:51:30.651 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-03.10:51:30.691 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+25-08-03.10:51:30.935 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [cn.bugstack.config.RedisClientConfig$$EnhancerBySpringCGLIB$$42a51c8f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:51:31.264 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-cn.bugstack.config.RedisClientConfigProperties' of type [cn.bugstack.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:51:31.885 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-03.10:51:32.460 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-03.10:51:32.468 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-03.10:51:32.504 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-03.10:51:34.634 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-03.10:51:34.829 [main            ] INFO  MarketTradeControllerTest - Started MarketTradeControllerTest in 5.16 seconds (JVM running for 5.869)
+25-08-03.10:51:35.279 [main            ] INFO  MarketTradeController  - 营销交易锁单:xiaofuge LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"200959740317","source":"s01","userId":"xiaofuge"}
+25-08-03.10:51:35.279 [main            ] INFO  TradeOrderService      - 拼团交易-查询未支付营销订单:xiaofuge outTradeNo:200959740317
+25-08-03.10:51:35.300 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-03.10:51:35.539 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-03.10:51:35.577 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xiaofuge requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-08-03.10:51:35.577 [main            ] INFO  SwitchNode             - 拼团商品查询试算服务-SwitchNode userId:xiaofuge requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-08-03.10:51:35.610 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xiaofuge 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
+25-08-03.10:51:35.611 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xiaofuge requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xiaofuge"}
+25-08-03.10:51:35.611 [main            ] INFO  MJCalculateService     - 优惠策略折扣计算:0
+25-08-03.10:51:35.617 [main            ] INFO  TradeOrderService      - 拼团交易-锁定营销优惠支付订单:xiaofuge activityId:100123 goodsId:9890001
+25-08-03.10:51:35.654 [main            ] INFO  MarketTradeController  - 交易锁单记录(新):xiaofuge marketPayOrderEntity:{"deductionPrice":90.00,"orderId":"439888983443","tradeOrderStatusEnumVO":"CREATE"}
+25-08-03.10:51:35.658 [main            ] INFO  MarketTradeControllerTest - 测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","outTradeNo":"200959740317","source":"s01","userId":"xiaofuge"} res:{"code":"0000","data":{"deductionPrice":90.00,"orderId":"439888983443","tradeOrderStatus":0},"info":"成功"}
+25-08-03.10:51:35.673 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-03.10:51:35.683 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
