@@ -1,5 +1,6 @@
 package cn.bugstack.domain.trade.service;
 
+import cn.bugstack.domain.trade.model.entity.NotifyTaskEntity;
 import cn.bugstack.domain.trade.model.entity.TradePaySettlementEntity;
 import cn.bugstack.domain.trade.model.entity.TradePaySuccessEntity;
 
@@ -37,4 +38,5 @@ public interface ITradeSettlementOrderService {
      */
     Map<String, Integer> execSettlementNotifyJob(String teamId) throws Exception;
 
+    Map<String, Integer> execSettlementNotifyJob(NotifyTaskEntity notifyTaskEntity) throws Exception;
 }

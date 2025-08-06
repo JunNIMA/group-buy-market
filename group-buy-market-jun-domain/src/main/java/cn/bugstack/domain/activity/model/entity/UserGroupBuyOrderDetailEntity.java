@@ -1,7 +1,5 @@
-package cn.bugstack.domain.trade.model.entity;
+package cn.bugstack.domain.activity.model.entity;
 
-import cn.bugstack.domain.trade.model.valobj.NotifyConfigVO;
-import cn.bugstack.types.enums.GroupBuyOrderEnumVO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,14 +10,16 @@ import java.util.Date;
 /**
  * @author Fuzhengwei bugstack.cn @小傅哥
  * @description 拼团组队实体对象
- * @create 2025-01-26 16:19
+ * @create 2025-02-02 13:10
  */
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class GroupBuyTeamEntity {
+public class UserGroupBuyOrderDetailEntity {
 
+    /** 用户ID */
+    private String userId;
     /** 拼单组队ID */
     private String teamId;
     /** 活动ID */
@@ -30,13 +30,11 @@ public class GroupBuyTeamEntity {
     private Integer completeCount;
     /** 锁单数量 */
     private Integer lockCount;
-    /** 状态（0-拼单中、1-完成、2-失败） */
-    private GroupBuyOrderEnumVO status;
     /** 拼团开始时间 - 参与拼团时间 */
     private Date validStartTime;
     /** 拼团结束时间 - 拼团有效时长 */
     private Date validEndTime;
-    /** 回调配置 */
-    private NotifyConfigVO notifyConfigVO;
+    /** 外部交易单号-确保外部调用唯一幂等 */
+    private String outTradeNo;
 
 }
