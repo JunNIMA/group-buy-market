@@ -1,5 +1,6 @@
 package cn.bugstack.infrastructure.dao;
 
+import cn.bugstack.domain.activity.model.entity.UserGroupBuyOrderDetailEntity;
 import cn.bugstack.infrastructure.dao.po.GroupBuyOrderList;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -29,4 +30,11 @@ public interface IGroupBuyOrderListDao {
 
     List<GroupBuyOrderList> queryInProgressUserGroupBuyOrderDetailListByActivityId(Long activityId);
 
+    int unpaid2Refund(GroupBuyOrderList groupBuyOrderListReq);
+
+    int paid2Refund(GroupBuyOrderList groupBuyOrderListReq);
+
+    int paidTeam2Refund(GroupBuyOrderList groupBuyOrderListReq);
+
+    List<GroupBuyOrderList> queryTimeoutUnpaidOrderList();
 }

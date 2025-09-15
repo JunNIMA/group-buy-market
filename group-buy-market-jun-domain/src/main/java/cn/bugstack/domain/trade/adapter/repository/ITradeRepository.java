@@ -1,6 +1,8 @@
 package cn.bugstack.domain.trade.adapter.repository;
 
+import cn.bugstack.domain.activity.model.entity.UserGroupBuyOrderDetailEntity;
 import cn.bugstack.domain.trade.model.aggregate.GroupBuyOrderAggregate;
+import cn.bugstack.domain.trade.model.aggregate.GroupBuyRefundAggregate;
 import cn.bugstack.domain.trade.model.aggregate.GroupBuyTeamSettlementAggregate;
 import cn.bugstack.domain.trade.model.entity.GroupBuyActivityEntity;
 import cn.bugstack.domain.trade.model.entity.GroupBuyTeamEntity;
@@ -16,6 +18,8 @@ import java.util.List;
  * @create 2025-01-11 09:07
  */
 public interface ITradeRepository {
+
+    List<UserGroupBuyOrderDetailEntity> queryTimeoutUnpaidOrderList();
 
     MarketPayOrderEntity queryMarketPayOrderEntityByOutTradeNo(String userId, String outTradeNo);
 
@@ -37,10 +41,21 @@ public interface ITradeRepository {
 
     List<NotifyTaskEntity> queryUnExecutedNotifyTaskList(String teamId);
 
-    int updateNotifyTaskStatusSuccess(String teamId);
+    int updateNotifyTaskStatusSuccess(NotifyTaskEntity notifyTask);
 
-    int updateNotifyTaskStatusError(String teamId);
+    int updateNotifyTaskStatusError(NotifyTaskEntity notifyTask);
 
-    int updateNotifyTaskStatusRetry(String teamId);
+    int updateNotifyTaskStatusRetry(NotifyTaskEntity notifyTask);
 
+    boolean occupyTeamStock(String teamStockKey, String recoveryTeamStockKey, Integer target, Integer validTime);
+
+    void recoveryTeamStock(String recoveryTeamStockKey, Integer validTime);
+
+    NotifyTaskEntity unpaid2Refund(GroupBuyRefundAggregate groupBuyRefundAggregate);
+
+    NotifyTaskEntity paid2Refund(GroupBuyRefundAggregate groupBuyRefundAggregate);
+
+    NotifyTaskEntity paidTeam2Refund(GroupBuyRefundAggregate groupBuyRefundAggregate);
+
+    void refund2AddRecovery(String recoveryTeamStockKey, String orderId);
 }

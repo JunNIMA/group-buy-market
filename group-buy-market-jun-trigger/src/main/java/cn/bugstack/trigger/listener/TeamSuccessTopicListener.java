@@ -25,7 +25,7 @@ public class TeamSuccessTopicListener {
             )
     )
     public void listener(String message) {
-        log.info("接收消息:{}", message);
+        log.info("接收消息（组队成功）:{}", message);
     }
 
 }

@@ -108,4 +108,49 @@
         </foreach>
     </select>
 
+    <update id="unpaid2Refund" parameterType="cn.bugstack.infrastructure.dao.po.GroupBuyOrder">
+        update group_buy_order
+        set lock_count = lock_count + #{lockCount}, update_time= now()
+        where
+            team_id = #{teamId} and
+            status = 0
+    </update>
+
+    <update id="paid2Refund" parameterType="cn.bugstack.infrastructure.dao.po.GroupBuyOrder">
+        update group_buy_order
+        set lock_count = lock_count + #{lockCount}, complete_count = complete_count + #{completeCount}, update_time= now(),update_time= now()
+        where
+            team_id = #{teamId} and
+            status = 0
+    </update>
+
+    <update id="paidTeam2Refund" parameterType="cn.bugstack.infrastructure.dao.po.GroupBuyOrder">
+        update group_buy_order
+        set lock_count = lock_count + #{lockCount},
+            complete_count = complete_count + #{completeCount},
+            status = 3,
+            update_time = now()
+        where
+            team_id = #{teamId} and (status = 1 or status = 3) and complete_count > 1
+    </update>
+
+    <update id="paidTeam2RefundFail" parameterType="cn.bugstack.infrastructure.dao.po.GroupBuyOrder">
+        update group_buy_order
+        set lock_count = lock_count + #{lockCount},
+            complete_count = complete_count + #{completeCount},
+            status = 2,
+            update_time= now()
+        where
+            team_id = #{teamId} and (status = 1 or status = 3) and complete_count = 1
+    </update>
+
+    <select id="queryGroupBuyTeamByTeamIds" parameterType="java.util.Set" resultMap="dataMap">
+        select team_id, activity_id, target_count, complete_count, lock_count, status, valid_start_time, valid_end_time,
+        notify_type, notify_url
+        from group_buy_order where team_id in
+        <foreach item="teamId" collection="teamIds" open="(" separator="," close=")">
+            #{teamId}
+        </foreach>
+    </select>
+
 </mapper>

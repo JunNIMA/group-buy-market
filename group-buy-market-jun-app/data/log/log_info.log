@@ -1,97 +1,143 @@
-25-08-06.15:31:04.637 [main            ] INFO  ApiTest                - Starting ApiTest using Java 1.8.0_442 on JUN with PID 42488 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
-25-08-06.15:31:04.637 [main            ] INFO  ApiTest                - The following 1 profile is active: "dev"
-25-08-06.15:31:08.282 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-08-06.15:31:08.286 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-08-06.15:31:08.337 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.
-25-08-06.15:31:08.663 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [cn.bugstack.config.RedisClientConfig$$EnhancerBySpringCGLIB$$ffab6ae3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-25-08-06.15:31:09.024 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-cn.bugstack.config.RedisClientConfigProperties' of type [cn.bugstack.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-25-08-06.15:31:09.732 [main            ] INFO  Version                - Redisson 3.26.0
-25-08-06.15:31:10.428 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-08-06.15:31:10.438 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-08-06.15:31:10.482 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-25-08-06.15:31:14.920 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-08-06.15:31:15.023 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [47.109.137.60:5672]
-25-08-06.15:31:15.274 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#51eb0e84:0/SimpleConnection@684b26b7 [delegate=amqp://admin@47.109.137.60:5672//admin, localPort= 50095]
-25-08-06.15:31:15.677 [main            ] INFO  ApiTest                - Started ApiTest in 11.436 seconds (JVM running for 27.062)
-25-08-06.15:31:15.996 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  TeamSuccessTopicListener - 接收消息:订单结算：ORD-20231234
-25-08-06.15:31:16.037 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  TeamSuccessTopicListener - 接收消息:订单结算：ORD-20231235
-25-08-06.15:31:16.079 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  TeamSuccessTopicListener - 接收消息:订单结算：ORD-20231236
-25-08-06.15:31:16.122 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  TeamSuccessTopicListener - 接收消息:订单结算：ORD-20231237
-25-08-06.15:31:16.163 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  TeamSuccessTopicListener - 接收消息:订单结算：ORD-20231238
-25-08-06.15:31:30.012 [scheduling-1    ] INFO  TradeSettlementOrderService - 拼团交易-执行结算通知任务
-25-08-06.15:31:30.038 [scheduling-1    ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-08-06.15:31:30.305 [scheduling-1    ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-08-06.15:31:30.557 [scheduling-1    ] INFO  GroupBuyNotifyJob      - 定时任务，回调通知拼团完结任务 result:{"retryCount":0,"successCount":0,"waitCount":2,"errorCount":0}
-25-08-06.15:31:30.997 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-25-08-06.15:31:31.331 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-25-08-06.15:31:31.333 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-25-08-06.15:31:31.423 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-08-06.15:31:31.434 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-08-06.15:35:25.520 [main            ] INFO  MarketTradeControllerTest - Starting MarketTradeControllerTest using Java 1.8.0_442 on JUN with PID 40532 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
-25-08-06.15:35:25.521 [main            ] INFO  MarketTradeControllerTest - The following 1 profile is active: "dev"
-25-08-06.15:35:26.417 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-08-06.15:35:26.420 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-08-06.15:35:26.478 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 0 Redis repository interfaces.
-25-08-06.15:35:26.798 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [cn.bugstack.config.RedisClientConfig$$EnhancerBySpringCGLIB$$51a88921] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-25-08-06.15:35:27.123 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-cn.bugstack.config.RedisClientConfigProperties' of type [cn.bugstack.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-25-08-06.15:35:27.786 [main            ] INFO  Version                - Redisson 3.26.0
-25-08-06.15:35:28.448 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-08-06.15:35:28.459 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-08-06.15:35:28.505 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-25-08-06.15:35:31.525 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-08-06.15:35:31.625 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [47.109.137.60:5672]
-25-08-06.15:35:31.847 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#7c91fe86:0/SimpleConnection@5b23c1f6 [delegate=amqp://admin@47.109.137.60:5672//admin, localPort= 50757]
-25-08-06.15:35:32.224 [main            ] INFO  MarketTradeControllerTest - Started MarketTradeControllerTest in 7.009 seconds (JVM running for 7.699)
-25-08-06.15:35:32.596 [main            ] INFO  MarketTradeController  - 营销交易锁单:xfg01 LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","notifyConfigVO":{"notifyType":"MQ"},"outTradeNo":"382425420908","source":"s01","userId":"xfg01"}
-25-08-06.15:35:32.596 [main            ] INFO  TradeLockOrderService  - 拼团交易-查询未支付营销订单:xfg01 outTradeNo:382425420908
-25-08-06.15:35:32.619 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-08-06.15:35:32.832 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-08-06.15:35:32.870 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
-25-08-06.15:35:32.870 [main            ] INFO  SwitchNode             - 拼团商品查询试算服务-SwitchNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
-25-08-06.15:35:32.892 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg01 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
-25-08-06.15:35:32.892 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
-25-08-06.15:35:32.892 [main            ] INFO  ZJCalculateService     - 优惠策略折扣计算:0
-25-08-06.15:35:32.900 [main            ] INFO  TradeLockOrderService  - 拼团交易-锁定营销优惠支付订单:xfg01 activityId:100123 goodsId:9890001
-25-08-06.15:35:32.901 [main            ] INFO  ActivityUsabilityRuleFilter - 交易规则过滤-活动的可用性校验xfg01 activityId:100123
-25-08-06.15:35:32.904 [main            ] INFO  UserTakeLimitRuleFilter - 交易规则过滤-用户参与次数校验xfg01 activityId:100123
-25-08-06.15:35:32.937 [main            ] INFO  MarketTradeController  - 交易锁单记录(新):xfg01 marketPayOrderEntity:{"deductionPrice":20.00,"orderId":"747981561207","tradeOrderStatusEnumVO":"CREATE"}
-25-08-06.15:35:32.942 [main            ] INFO  MarketTradeControllerTest - 测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","notifyConfigVO":{"notifyType":"MQ"},"outTradeNo":"382425420908","source":"s01","userId":"xfg01"} res:{"code":"0000","data":{"deductionPrice":20.00,"orderId":"747981561207","tradeOrderStatus":0},"info":"成功"}
-25-08-06.15:35:32.990 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-25-08-06.15:35:33.252 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-25-08-06.15:35:33.256 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-25-08-06.15:35:33.299 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-08-06.15:35:33.308 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-08-06.15:37:38.884 [main            ] INFO  TradeSettlementOrderServiceTest - Starting TradeSettlementOrderServiceTest using Java 1.8.0_442 on JUN with PID 66804 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
-25-08-06.15:37:38.884 [main            ] INFO  TradeSettlementOrderServiceTest - The following 1 profile is active: "dev"
-25-08-06.15:37:39.734 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-08-06.15:37:39.738 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-08-06.15:37:39.792 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 38 ms. Found 0 Redis repository interfaces.
-25-08-06.15:37:40.099 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [cn.bugstack.config.RedisClientConfig$$EnhancerBySpringCGLIB$$51a88921] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-25-08-06.15:37:40.424 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-cn.bugstack.config.RedisClientConfigProperties' of type [cn.bugstack.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-25-08-06.15:37:41.049 [main            ] INFO  Version                - Redisson 3.26.0
-25-08-06.15:37:41.663 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-08-06.15:37:41.672 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-08-06.15:37:41.709 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-25-08-06.15:37:44.695 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-08-06.15:37:44.789 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [47.109.137.60:5672]
-25-08-06.15:37:45.003 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#7c91fe86:0/SimpleConnection@5b23c1f6 [delegate=amqp://admin@47.109.137.60:5672//admin, localPort= 51167]
-25-08-06.15:37:45.326 [main            ] INFO  TradeSettlementOrderServiceTest - Started TradeSettlementOrderServiceTest in 6.8 seconds (JVM running for 7.473)
-25-08-06.15:37:45.500 [main            ] INFO  TradeSettlementOrderService - 拼团交易-支付订单结算:xfg01 outTradeNo:382425420908
-25-08-06.15:37:45.501 [main            ] INFO  SCRuleFilter           - 结算规则过滤-渠道黑名单校验xfg01 outTradeNo:382425420908
-25-08-06.15:37:45.507 [main            ] INFO  OutTradeNoRuleFilter   - 结算规则过滤-外部单号校验xfg01 outTradeNo:382425420908
-25-08-06.15:37:45.525 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-08-06.15:37:45.714 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-08-06.15:37:45.749 [main            ] INFO  SettableRuleFilter     - 结算规则过滤-有效时间校验xfg01 outTradeNo:382425420908
-25-08-06.15:37:45.754 [main            ] INFO  EndRuleFilter          - 结算规则过滤-结束节点xfg01 outTradeNo:382425420908
-25-08-06.15:37:45.914 [pool-2-thread-1 ] INFO  TradeSettlementOrderService - 拼团交易-执行结算通知回调，指定 teamId:47661219 notifyTaskEntity:{"notifyCount":0,"notifyMQ":"topic.team_success","notifyType":"MQ","parameterJson":"{\"teamId\":\"47661219\",\"outTradeNoList\":[\"382425420908\"]}","teamId":"47661219"}
-25-08-06.15:37:45.916 [main            ] INFO  TradeSettlementOrderServiceTest - 请求参数:{"channel":"c01","outTradeNo":"382425420908","outTradeTime":"2025-08-06 15:37:45.5","source":"s01","userId":"xfg01"}
-25-08-06.15:37:45.918 [main            ] INFO  TradeSettlementOrderServiceTest - 测试结果:{"activityId":100123,"channel":"c01","outTradeNo":"382425420908","source":"s01","teamId":"47661219","userId":"xfg01"}
-25-08-06.15:37:45.994 [pool-2-thread-1 ] INFO  TradeSettlementOrderService - 回调通知拼团完结 result:{"retryCount":0,"successCount":1,"waitCount":1,"errorCount":0}
-25-08-06.15:37:46.022 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  TeamSuccessTopicListener - 接收消息:{"teamId":"47661219","outTradeNoList":["382425420908"]}
-25-08-06.15:38:00.012 [scheduling-1    ] INFO  TradeSettlementOrderService - 拼团交易-执行结算通知任务
-25-08-06.15:38:00.024 [scheduling-1    ] INFO  GroupBuyNotifyJob      - 定时任务，回调通知拼团完结任务 result:{"retryCount":0,"successCount":0,"waitCount":2,"errorCount":0}
-25-08-06.15:38:09.892 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-25-08-06.15:38:10.284 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-25-08-06.15:38:10.286 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-25-08-06.15:38:10.363 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-08-06.15:38:10.373 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-08.10:54:42.964 [main            ] INFO  ITradeReverseStockServiceTest - Starting ITradeReverseStockServiceTest using Java 1.8.0_442 on JUN with PID 58176 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
+25-08-08.10:54:42.965 [main            ] INFO  ITradeReverseStockServiceTest - The following 1 profile is active: "dev"
+25-08-08.10:54:46.694 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-08.10:54:46.699 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-08.10:54:46.768 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 0 Redis repository interfaces.
+25-08-08.10:54:47.215 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [cn.bugstack.config.RedisClientConfig$$EnhancerBySpringCGLIB$$f2cf1dc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-08.10:54:47.725 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-cn.bugstack.config.RedisClientConfigProperties' of type [cn.bugstack.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-08.10:54:48.670 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-08.10:54:49.530 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-08.10:54:49.551 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-08.10:54:49.619 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-08.10:54:54.052 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-08.10:54:54.169 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [47.109.137.60:5672]
+25-08-08.10:54:54.412 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#7196a8f1:0/SimpleConnection@18ac4af6 [delegate=amqp://admin@47.109.137.60:5672//admin, localPort= 61041]
+25-08-08.10:54:55.137 [main            ] INFO  ITradeReverseStockServiceTest - Started ITradeReverseStockServiceTest in 12.542 seconds (JVM running for 17.403)
+25-08-08.10:54:55.597 [main            ] INFO  MarketTradeController  - 营销交易锁单:xfg01 LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","notifyConfigVO":{"notifyType":"MQ"},"outTradeNo":"800646954749","source":"s01","userId":"xfg01"}
+25-08-08.10:54:55.597 [main            ] INFO  TradeLockOrderService  - 拼团交易-查询未支付营销订单:xfg01 outTradeNo:800646954749
+25-08-08.10:54:55.627 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-08.10:54:55.930 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-08.10:54:55.984 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
+25-08-08.10:54:55.984 [main            ] INFO  SwitchNode             - 拼团商品查询试算服务-SwitchNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
+25-08-08.10:54:56.062 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg01 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
+25-08-08.10:54:56.062 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg01 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg01"}
+25-08-08.10:54:56.062 [main            ] INFO  ZJCalculateService     - 优惠策略折扣计算:0
+25-08-08.10:54:56.073 [main            ] INFO  TradeLockOrderService  - 拼团交易-锁定营销优惠支付订单:xfg01 activityId:100123 goodsId:9890001
+25-08-08.10:54:56.075 [main            ] INFO  ActivityUsabilityRuleFilter - 交易规则过滤-活动的可用性校验xfg01 activityId:100123
+25-08-08.10:54:56.080 [main            ] INFO  UserTakeLimitRuleFilter - 交易规则过滤-用户参与次数校验xfg01 activityId:100123
+25-08-08.10:54:56.086 [main            ] INFO  TeamStockOccupyRuleFilter - 交易规则过滤-组队库存校验xfg01 activityId:100123
+25-08-08.10:54:56.119 [main            ] INFO  MarketTradeController  - 交易锁单记录(新):xfg01 marketPayOrderEntity:{"deductionPrice":20.00,"orderId":"657575503446","originalPrice":100.00,"payPrice":80.00,"teamId":"90726870","tradeOrderStatusEnumVO":"CREATE"}
+25-08-08.10:54:56.127 [main            ] INFO  ITradeReverseStockServiceTest - 第1笔，测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","notifyConfigVO":{"notifyType":"MQ"},"outTradeNo":"800646954749","source":"s01","userId":"xfg01"} res:{"code":"0000","data":{"deductionPrice":20.00,"orderId":"657575503446","originalPrice":100.00,"payPrice":80.00,"teamId":"90726870","tradeOrderStatus":0},"info":"成功"}
+25-08-08.10:54:56.128 [main            ] INFO  MarketTradeController  - 营销交易锁单:xfg02 LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","notifyConfigVO":{"notifyType":"MQ"},"outTradeNo":"617936787055","source":"s01","teamId":"90726870","userId":"xfg02"}
+25-08-08.10:54:56.128 [main            ] INFO  TradeLockOrderService  - 拼团交易-查询未支付营销订单:xfg02 outTradeNo:617936787055
+25-08-08.10:54:56.130 [main            ] INFO  TradeLockOrderService  - 拼团交易-查询拼单进度:90726870
+25-08-08.10:54:56.133 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xfg02 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg02"}
+25-08-08.10:54:56.133 [main            ] INFO  SwitchNode             - 拼团商品查询试算服务-SwitchNode userId:xfg02 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg02"}
+25-08-08.10:54:56.140 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg02 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
+25-08-08.10:54:56.140 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg02 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg02"}
+25-08-08.10:54:56.140 [main            ] INFO  ZJCalculateService     - 优惠策略折扣计算:0
+25-08-08.10:54:56.142 [main            ] INFO  TradeLockOrderService  - 拼团交易-锁定营销优惠支付订单:xfg02 activityId:100123 goodsId:9890001
+25-08-08.10:54:56.142 [main            ] INFO  ActivityUsabilityRuleFilter - 交易规则过滤-活动的可用性校验xfg02 activityId:100123
+25-08-08.10:54:56.143 [main            ] INFO  UserTakeLimitRuleFilter - 交易规则过滤-用户参与次数校验xfg02 activityId:100123
+25-08-08.10:54:56.146 [main            ] INFO  TeamStockOccupyRuleFilter - 交易规则过滤-组队库存校验xfg02 activityId:100123
+25-08-08.10:54:56.167 [main            ] INFO  MarketTradeController  - 交易锁单记录(新):xfg02 marketPayOrderEntity:{"deductionPrice":20.00,"orderId":"101508483114","originalPrice":100.00,"payPrice":80.00,"teamId":"90726870","tradeOrderStatusEnumVO":"CREATE"}
+25-08-08.10:54:56.167 [main            ] INFO  ITradeReverseStockServiceTest - 第2笔，测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","notifyConfigVO":{"notifyType":"MQ"},"outTradeNo":"617936787055","source":"s01","teamId":"90726870","userId":"xfg02"} res:{"code":"0000","data":{"deductionPrice":20.00,"orderId":"101508483114","originalPrice":100.00,"payPrice":80.00,"teamId":"90726870","tradeOrderStatus":0},"info":"成功"}
+25-08-08.10:54:56.167 [main            ] INFO  MarketTradeController  - 营销交易锁单:xfg03 LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","notifyConfigVO":{"notifyType":"MQ"},"outTradeNo":"635207785134","source":"s01","teamId":"90726870","userId":"xfg03"}
+25-08-08.10:54:56.167 [main            ] INFO  TradeLockOrderService  - 拼团交易-查询未支付营销订单:xfg03 outTradeNo:635207785134
+25-08-08.10:54:56.169 [main            ] INFO  TradeLockOrderService  - 拼团交易-查询拼单进度:90726870
+25-08-08.10:54:56.171 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xfg03 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg03"}
+25-08-08.10:54:56.172 [main            ] INFO  SwitchNode             - 拼团商品查询试算服务-SwitchNode userId:xfg03 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg03"}
+25-08-08.10:54:56.664 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg03 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
+25-08-08.10:54:56.664 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg03 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg03"}
+25-08-08.10:54:56.664 [main            ] INFO  ZJCalculateService     - 优惠策略折扣计算:0
+25-08-08.10:54:56.665 [main            ] INFO  TradeLockOrderService  - 拼团交易-锁定营销优惠支付订单:xfg03 activityId:100123 goodsId:9890001
+25-08-08.10:54:56.665 [main            ] INFO  ActivityUsabilityRuleFilter - 交易规则过滤-活动的可用性校验xfg03 activityId:100123
+25-08-08.10:54:56.668 [main            ] INFO  UserTakeLimitRuleFilter - 交易规则过滤-用户参与次数校验xfg03 activityId:100123
+25-08-08.10:54:56.669 [main            ] INFO  TeamStockOccupyRuleFilter - 交易规则过滤-组队库存校验xfg03 activityId:100123
+25-08-08.10:54:56.678 [main            ] INFO  MarketTradeController  - 交易锁单记录(新):xfg03 marketPayOrderEntity:{"deductionPrice":20.00,"orderId":"191269957055","originalPrice":100.00,"payPrice":80.00,"teamId":"90726870","tradeOrderStatusEnumVO":"CREATE"}
+25-08-08.10:54:56.678 [main            ] INFO  ITradeReverseStockServiceTest - 第3笔，测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","notifyConfigVO":{"notifyType":"MQ"},"outTradeNo":"635207785134","source":"s01","teamId":"90726870","userId":"xfg03"} res:{"code":"0000","data":{"deductionPrice":20.00,"orderId":"191269957055","originalPrice":100.00,"payPrice":80.00,"teamId":"90726870","tradeOrderStatus":0},"info":"成功"}
+25-08-08.10:54:56.732 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-08-08.10:54:56.772 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-08-08.10:54:56.979 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-08-08.10:54:57.174 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-08-08.10:54:57.179 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-08-08.10:54:57.179 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-08-08.10:54:57.232 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-08.10:54:57.248 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-08.10:55:19.210 [main            ] INFO  ITradeReverseStockServiceTest - Starting ITradeReverseStockServiceTest using Java 1.8.0_442 on JUN with PID 72780 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
+25-08-08.10:55:19.211 [main            ] INFO  ITradeReverseStockServiceTest - The following 1 profile is active: "dev"
+25-08-08.10:55:20.135 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-08.10:55:20.139 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-08.10:55:20.197 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46 ms. Found 0 Redis repository interfaces.
+25-08-08.10:55:20.514 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [cn.bugstack.config.RedisClientConfig$$EnhancerBySpringCGLIB$$81951a1b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-08.10:55:20.815 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-cn.bugstack.config.RedisClientConfigProperties' of type [cn.bugstack.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-08.10:55:21.442 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-08.10:55:22.039 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-08.10:55:22.049 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-08.10:55:22.091 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-08.10:55:25.716 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-08.10:55:25.829 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [47.109.137.60:5672]
+25-08-08.10:55:26.087 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#7f642bf:0/SimpleConnection@41e7a544 [delegate=amqp://admin@47.109.137.60:5672//admin, localPort= 61229]
+25-08-08.10:55:26.832 [main            ] INFO  ITradeReverseStockServiceTest - Started ITradeReverseStockServiceTest in 8.003 seconds (JVM running for 8.749)
+25-08-08.10:55:27.035 [main            ] INFO  TradeRefundOrderService - 逆向流程，退单操作 userId:xfg01 outTradeNo:800646954749
+25-08-08.10:55:27.035 [main            ] INFO  DataNodeFilter         - 逆向流程，退单操作 userId:xfg01 outTradeNo:800646954749
+25-08-08.10:55:27.063 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-08.10:55:27.260 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-08.10:55:27.300 [main            ] INFO  UniqueRefundNodeFilter - 逆向流程，退单操作 userId:xfg01 outTradeNo:800646954749
+25-08-08.10:55:27.300 [main            ] INFO  RefundOrderNodeFilter  - 逆向流程，退单操作 userId:xfg01 outTradeNo:800646954749
+25-08-08.10:55:27.303 [main            ] INFO  Unpaid2RefundStrategy  - 退单；未支付，未成团 userId:xfg01 teamId:90726870 orderId:657575503446
+25-08-08.10:55:27.481 [main            ] INFO  ITradeReverseStockServiceTest - 请求参数:{"channel":"c01","outTradeNo":"800646954749","source":"s01","userId":"xfg01"}
+25-08-08.10:55:27.481 [pool-2-thread-1 ] INFO  TradeTaskService       - 拼团交易-执行回调通知回调，指定 teamId:90726870 notifyTaskEntity:{"notifyCount":0,"notifyMQ":"topic.team_refund","notifyType":"MQ","parameterJson":"{\"activityId\":100123,\"orderId\":\"657575503446\",\"teamId\":\"90726870\",\"type\":\"unpaid_unlock\",\"userId\":\"xfg01\"}","teamId":"90726870","uuid":"90726870_trade_unpaid2refund_657575503446"}
+25-08-08.10:55:27.484 [main            ] INFO  ITradeReverseStockServiceTest - 测试结果:{"orderId":"657575503446","teamId":"90726870","tradeRefundBehaviorEnum":"SUCCESS","userId":"xfg01"}
+25-08-08.10:55:27.562 [pool-2-thread-1 ] INFO  AbstractReundOrderStrategy - 回调通知交易退单(未支付，未成团) result:{"retryCount":0,"successCount":1,"waitCount":1,"errorCount":0}
+25-08-08.10:55:27.596 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  RefundSuccessTopicListener - 接收消息（退单成功）- 恢复拼团队伍锁单量:{"activityId":100123,"orderId":"657575503446","teamId":"90726870","type":"unpaid_unlock","userId":"xfg01"}
+25-08-08.10:55:27.610 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  TradeRefundOrderService - 逆向流程，恢复锁单量 userId:xfg01 activityId:100123 teamId:90726870
+25-08-08.10:55:27.611 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  AbstractReundOrderStrategy - 退单；恢复锁单量 - 未支付，未成团，但有锁单记录，要恢复锁单库存 xfg01 100123 90726870
+25-08-08.10:55:27.614 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] INFO  TradeRepository        - 订单 657575503446 恢复库存成功，恢复库存key: group_buy_market_team_stock_key_100123_90726870_recovery
+25-08-08.10:56:04.130 [main            ] INFO  ITradeReverseStockServiceTest - Starting ITradeReverseStockServiceTest using Java 1.8.0_442 on JUN with PID 68384 (started by lenovo in D:\javacode\group-buy-market\group-buy-market-jun\group-buy-market-jun-app)
+25-08-08.10:56:04.131 [main            ] INFO  ITradeReverseStockServiceTest - The following 1 profile is active: "dev"
+25-08-08.10:56:04.982 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-08-08.10:56:04.985 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-08-08.10:56:05.039 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 0 Redis repository interfaces.
+25-08-08.10:56:05.337 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisClientConfig' of type [cn.bugstack.config.RedisClientConfig$$EnhancerBySpringCGLIB$$81951a1b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-08.10:56:05.602 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redis.sdk.config-cn.bugstack.config.RedisClientConfigProperties' of type [cn.bugstack.config.RedisClientConfigProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-08.10:56:06.235 [main            ] INFO  Version                - Redisson 3.26.0
+25-08-08.10:56:06.837 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-08.10:56:06.861 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-08-08.10:56:06.906 [main            ] INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redissonClient' of type [org.redisson.Redisson] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+25-08-08.10:56:09.857 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-08-08.10:56:09.955 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [47.109.137.60:5672]
+25-08-08.10:56:10.174 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#7f642bf:0/SimpleConnection@41e7a544 [delegate=amqp://admin@47.109.137.60:5672//admin, localPort= 61436]
+25-08-08.10:56:10.934 [main            ] INFO  ITradeReverseStockServiceTest - Started ITradeReverseStockServiceTest in 7.119 seconds (JVM running for 7.78)
+25-08-08.10:56:11.213 [main            ] INFO  MarketTradeController  - 营销交易锁单:xfg04 LockMarketPayOrderRequestDTO:{"activityId":100123,"channel":"c01","goodsId":"9890001","notifyConfigVO":{"notifyType":"MQ"},"outTradeNo":"931974052208","source":"s01","teamId":"90726870","userId":"xfg04"}
+25-08-08.10:56:11.213 [main            ] INFO  TradeLockOrderService  - 拼团交易-查询未支付营销订单:xfg04 outTradeNo:931974052208
+25-08-08.10:56:11.234 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-08-08.10:56:11.409 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-08-08.10:56:11.448 [main            ] INFO  TradeLockOrderService  - 拼团交易-查询拼单进度:90726870
+25-08-08.10:56:11.457 [main            ] INFO  RootNode               - 拼团商品查询试算服务-RootNode userId:xfg04 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg04"}
+25-08-08.10:56:11.457 [main            ] INFO  SwitchNode             - 拼团商品查询试算服务-SwitchNode userId:xfg04 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg04"}
+25-08-08.10:56:11.529 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg04 异步线程加载数据「GroupBuyActivityDiscountVO、SkuVO」完成
+25-08-08.10:56:11.529 [main            ] INFO  MarketNode             - 拼团商品查询试算服务-MarketNode userId:xfg04 requestParameter:{"activityId":100123,"channel":"c01","goodsId":"9890001","source":"s01","userId":"xfg04"}
+25-08-08.10:56:11.529 [main            ] INFO  ZJCalculateService     - 优惠策略折扣计算:0
+25-08-08.10:56:11.537 [main            ] INFO  TradeLockOrderService  - 拼团交易-锁定营销优惠支付订单:xfg04 activityId:100123 goodsId:9890001
+25-08-08.10:56:11.538 [main            ] INFO  ActivityUsabilityRuleFilter - 交易规则过滤-活动的可用性校验xfg04 activityId:100123
+25-08-08.10:56:11.543 [main            ] INFO  UserTakeLimitRuleFilter - 交易规则过滤-用户参与次数校验xfg04 activityId:100123
+25-08-08.10:56:11.546 [main            ] INFO  TeamStockOccupyRuleFilter - 交易规则过滤-组队库存校验xfg04 activityId:100123
+25-08-08.10:56:11.575 [main            ] INFO  MarketTradeController  - 交易锁单记录(新):xfg04 marketPayOrderEntity:{"deductionPrice":20.00,"orderId":"663814698201","originalPrice":100.00,"payPrice":80.00,"teamId":"90726870","tradeOrderStatusEnumVO":"CREATE"}
+25-08-08.10:56:11.580 [main            ] INFO  ITradeReverseStockServiceTest - 测试结果 req:{"activityId":100123,"channel":"c01","goodsId":"9890001","notifyConfigVO":{"notifyType":"MQ"},"outTradeNo":"931974052208","source":"s01","teamId":"90726870","userId":"xfg04"} res:{"code":"0000","data":{"deductionPrice":20.00,"orderId":"663814698201","originalPrice":100.00,"payPrice":80.00,"teamId":"90726870","tradeOrderStatus":0},"info":"成功"}
+25-08-08.10:56:11.630 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-08-08.10:56:11.666 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-08-08.10:56:11.773 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-08-08.10:56:11.958 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-08-08.10:56:11.960 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-08-08.10:56:11.961 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-08-08.10:56:12.006 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-08.10:56:12.015 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-08-08.10:59:33.092 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-08-08.10:59:33.134 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-08-08.10:59:33.248 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-08-08.10:59:34.040 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-08-08.10:59:34.045 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-08-08.10:59:34.045 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-08-08.10:59:34.142 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-08-08.10:59:34.155 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

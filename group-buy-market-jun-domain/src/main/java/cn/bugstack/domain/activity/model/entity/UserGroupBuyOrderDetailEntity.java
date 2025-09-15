@@ -18,6 +18,10 @@ import java.util.Date;
 @NoArgsConstructor
 public class UserGroupBuyOrderDetailEntity {
 
+    private String source;
+
+    private String channel;
+
     /** 用户ID */
     private String userId;
     /** 拼单组队ID */

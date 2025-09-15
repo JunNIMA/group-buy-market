@@ -37,4 +37,13 @@ public interface IGroupBuyOrderDao {
 
     Integer queryAllUserCount(Set<String> teamIds);
 
+    int unpaid2Refund(GroupBuyOrder groupBuyOrderReq);
+
+    int paid2Refund(GroupBuyOrder groupBuyOrderReq);
+
+    int paidTeam2RefundFail(GroupBuyOrder groupBuyOrderReq);
+
+    int paidTeam2Refund(GroupBuyOrder groupBuyOrderReq);
+
+    List<GroupBuyOrder> queryGroupBuyTeamByTeamIds(Set<String> teamIds);
 }
